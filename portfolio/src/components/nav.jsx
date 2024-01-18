@@ -15,10 +15,10 @@ function Nav() {
                 <Link key={3} class="dropdown-item text-light" to='/projects'>
                     Projects
                 </Link>,
-                <Link key={2} class="dropdown-item text-light" to='/resumes'>
+                <Link key={4} class="dropdown-item text-light" to='/resumes'>
                     Resume
                 </Link>,
-                <Link key={2} class="dropdown-item text-light" to='/contacts'>
+                <Link key={5} class="dropdown-item text-light" to='/contacts'>
                     Contact
                 </Link>,
             ]}
