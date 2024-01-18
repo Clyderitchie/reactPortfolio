@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import GameList from '../components/ui/gameList';
+import FizzBuzz from './games/fizzBuzz';
 
 
 function Games() {
