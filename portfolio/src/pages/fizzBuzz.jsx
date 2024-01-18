@@ -56,16 +56,20 @@ function FizzBuzz() {
 
   const startTimer = () => {
     const countdown = setInterval(() => {
-      setTimer((prevTimer) => prevTimer - 1);
-      if (timer <= 0) {
-        clearInterval(countdown);
-        document.querySelector('#numberInput').innerHTML = 'Game Over';
-        saveScore();
-      }
-      document.querySelector('#timer').textContent = `Time left: ${timer} seconds`;
+      setTimer((prevTimer) => {
+        if (prevTimer <= 0) {
+          clearInterval(countdown);
+          document.querySelector('#numberInput').innerHTML = 'Game Over';
+          saveScore();
+          return prevTimer;
+        }
+        document.querySelector('#timer').textContent = `Time left: ${prevTimer} seconds`;
+        return prevTimer - 1;
+      });
       randomNumbers();
     }, 1000);
   };
+  
 
   const answerBtns = () => {
     fizzRef.current.addEventListener('click', () => {
