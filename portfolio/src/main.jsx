@@ -9,6 +9,7 @@ import App from './App';
 import Home from './pages/homePage';
 import ErrorPage from './pages/errorPage';
 import Game from './pages/gamesPage';
+import FizzBuzz from './pages/games/fizzBuzz';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/games',
         element: <Game />
+      },
+      {
+        path: '/games/fizzBuzz',
+        element: <FizzBuzz />
       }
     ]
   }

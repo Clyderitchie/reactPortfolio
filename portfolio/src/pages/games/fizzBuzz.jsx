@@ -1,6 +1,7 @@
 function FizzBuzz() {
     return (
         <>
+        <h1>hello here is fizzbuzz</h1>
             {/* Intro and high score list */}
             <div class="container p-2">
                 <div class="row">
