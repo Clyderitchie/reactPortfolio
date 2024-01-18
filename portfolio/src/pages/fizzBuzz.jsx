@@ -38,17 +38,20 @@ function FizzBuzz() {
   }, []);
 
   const randomNumbers = () => {
+    let result = ''
     if (randomNumber % 15 === 0) {
-      console.log('fizzBuzz');
+      result = 'fizzBuzz';
     } else if (randomNumber % 3 === 0) {
-      console.log('fizz');
+      result = 'fizz';
     } else if (randomNumber % 5 === 0) {
-      console.log('buzz');
+      result = 'buzz';
     } else {
-      console.log('nothing');
+      result = 'nothing';
     }
+
+    setRandomNumber(Math.floor(Math.random() * 1000));
     document.querySelector('#numberInput').innerHTML = randomNumber;
-    return randomNumber;
+    return result;
   };
 
   const startTimer = () => {
@@ -60,6 +63,7 @@ function FizzBuzz() {
         saveScore();
       }
       document.querySelector('#timer').textContent = `Time left: ${timer} seconds`;
+      randomNumbers();
     }, 1000);
   };
 
@@ -68,17 +72,17 @@ function FizzBuzz() {
       setSelectedBtn('fizz');
       compareAnswers();
     });
-  
+
     buzzRef.current.addEventListener('click', () => {
       setSelectedBtn('buzz');
       compareAnswers();
     });
-  
+
     fizzBuzzRef.current.addEventListener('click', () => {
       setSelectedBtn('fizzBuzz');
       compareAnswers();
     });
-  
+
     nothingRef.current.addEventListener('click', () => {
       setSelectedBtn('nothing');
       compareAnswers();
@@ -147,7 +151,7 @@ function FizzBuzz() {
           <div id="start-btn" class="col-6 d-flex justify-content-center">
             <button ref={startBtnRef} id="startBtn" type="button" class="btn btn-light" onClick={handleStartClick}>
               Start Game
-              </button>
+            </button>
           </div>
           <div id="timer" class="col-4 d-flex justify-content-center fw-bold fs-4 text-light"></div>
           <div id="score" class="col-2 d-flex justify-content-center fw-bold fs-4 text-light"></div>
