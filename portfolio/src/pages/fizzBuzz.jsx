@@ -4,7 +4,7 @@ function FizzBuzz() {
   const [score, setScore] = useState(parseInt(localStorage.getItem('score')) || 0);
   const [scores, setScores] = useState(JSON.parse(localStorage.getItem('scores')) || []);
   const [timer, setTimer] = useState(60);
-  const [randomNumber, setRandomNumber] = useState(0);
+  const [randomNumber, setRandomNumber] = useState(null);
   // const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * 1000));
   const [selectedBtn, setSelectedBtn] = useState('');
   // const numberInputRef = useRef(null);
@@ -37,12 +37,15 @@ function FizzBuzz() {
   useEffect(() => {
     answerBtns();
     renderScores();
-    const newRandomNumber = Math.floor(Math.random() * 1000);
-    setRandomNumber(newRandomNumber);
+    // const newRandomNumber = Math.floor(Math.random() * 1000);
+    // setRandomNumber(newRandomNumber);
     startBtnRef.current.addEventListener('click', startTimer);
   }, []);
 
   const startTimer = () => {
+    const newRandomNumber = Math.floor(Math.random() * 1000);
+    setRandomNumber(newRandomNumber);
+
     const countdown = setInterval(() => {
       setTimer((prevTimer) => {
         if (prevTimer <= 0) {
@@ -183,8 +186,7 @@ function FizzBuzz() {
             </div>
           </div>
           <div className="col-6 d-flex justify-content-center">
-            <div id="numberInput" className="fw-bold fs-4 text-light">{randomNumber}</div>
-            {/* <div id="numberInput" className="fw-bold fs-4 text-light" ref={numberInputRef}>{randomNumber}</div> */}
+            <div id="numberInput" className="fw-bold fs-4 text-light">{randomNumber !== null && randomNumber}</div>
           </div>
         </div>
       </div>
