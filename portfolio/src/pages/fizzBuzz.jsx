@@ -12,6 +12,7 @@ function FizzBuzz() {
   const fizzBuzzRef = useRef(null);
   const nothingRef = useRef(null);
   const startBtnRef = useRef(null);
+  const newGameBtnRef = useRef(null);
   const handleStartClick = () => {
     startTimer();
   };
@@ -36,6 +37,7 @@ function FizzBuzz() {
     answerBtns();
     // renderScores();
     startBtnRef.current.addEventListener('click', startTimer);
+    newGameBtnRef.current.addEventListener('click', handleNewGameClick);
   }, []);
 
   const startTimer = () => {
@@ -112,29 +114,37 @@ function FizzBuzz() {
   };
 
   const saveScore = () => {
-    const newScore = { id: "CR", score };
+    const newScore = { id: "CR", score: score };
     const updatedScores = [...scores, newScore];
     const sortedScores = updatedScores.sort((a, b) => b.score - a.score);
     const topScores = sortedScores.slice(0, 5);
     setScores(topScores);
     localStorage.setItem('scores', JSON.stringify(topScores));
-    renderScores();
+    setScore(0); // Reset the score to 0 after saving it
   };
 
-  const renderScores = () => {
-    const scoreList = scoreListRef.current;
-    scoreList.innerHTML = '';
-    scores.forEach((score, index) => {
-      const li = document.createElement('li');
-      li.textContent = score.score;
-      scoreList.appendChild(li);
-    });
+  // const renderScores = () => {
+  //   const scoreList = scoreListRef.current;
+  //   scoreList.innerHTML = '';
+  //   scores.forEach((score, index) => {
+  //     const li = document.createElement('li');
+  //     li.textContent = score.score;
+  //     scoreList.appendChild(li);
+  //   });
+  // };
+
+  const handleNewGameClick = () => {
+    setScore(0);
+    setTimer(60);
+    const newRandomNumber = Math.floor(Math.random() * 1000);
+    setRandomNumber(newRandomNumber);
+    setSelectedBtn('');
   };
 
   return (
     <>
       {/* Intro and high score list */}
-      <div className="container p-2 mt-4">
+      <div className="container p-2 mt-5">
         <div className="row">
           <div className="col-8">
             <h2 className="text-light d-flex justify-content-center">
@@ -225,7 +235,7 @@ function FizzBuzz() {
             </div>
           </div>
           <div id="newGame" className="col-6 d-flex justify-content-center">
-            <button id="newGameBtn" type="button" className="btn btn-light">New Game</button>
+            <button id="newGameBtn" type="button" className="btn btn-light" ref={newGameBtnRef}>New Game</button>
           </div>
         </div>
       </div>
