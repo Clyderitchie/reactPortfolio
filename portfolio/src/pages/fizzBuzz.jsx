@@ -4,9 +4,10 @@ function FizzBuzz() {
   const [score, setScore] = useState(parseInt(localStorage.getItem('score')) || 0);
   const [scores, setScores] = useState(JSON.parse(localStorage.getItem('scores')) || []);
   const [timer, setTimer] = useState(60);
-  const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * 1000));
+  const [randomNumber, setRandomNumber] = useState(0);
+  // const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * 1000));
   const [selectedBtn, setSelectedBtn] = useState('');
-  const numberInputRef = useRef(null);
+  // const numberInputRef = useRef(null);
   const scoreListRef = useRef(null);
   const fizzRef = useRef(null);
   const buzzRef = useRef(null);
@@ -36,7 +37,8 @@ function FizzBuzz() {
   useEffect(() => {
     answerBtns();
     renderScores();
-    randomNumbers();
+    const newRandomNumber = Math.floor(Math.random() * 1000);
+    setRandomNumber(newRandomNumber);
     startBtnRef.current.addEventListener('click', startTimer);
   }, []);
 
@@ -52,10 +54,9 @@ function FizzBuzz() {
         document.querySelector('#timer').textContent = `Time left: ${prevTimer} seconds`;
         return prevTimer - 1;
       });
-      randomNumbers();
     }, 1000);
   };
-  
+
   const answerBtns = () => {
     fizzRef.current.addEventListener('click', () => {
       setSelectedBtn('fizz');
@@ -88,17 +89,16 @@ function FizzBuzz() {
     } else if (selectedBtn === 'nothing' && randomNumber % 3 !== 0 && randomNumber % 5 !== 0 && randomNumber % 15 !== 0) {
       setScore((prevScore) => prevScore + 1);
     }
-    
+
     setRandomNumber((prevRandomNumber) => {
       const newRandomNumber = Math.floor(Math.random() * 1000);
-      randomNumbers(newRandomNumber); // Call randomNumbers with the new random number
       return newRandomNumber;
     });
   };
-  
+
   const randomNumbers = () => {
     let result = '';
-  
+
     if (randomNumber % 15 === 0) {
       result = 'fizzBuzz';
     } else if (randomNumber % 3 === 0) {
@@ -108,8 +108,7 @@ function FizzBuzz() {
     } else {
       result = 'nothing';
     }
-  
-    numberInputRef.current.innerHTML = randomNumber;
+
     return result;
   };
 
@@ -130,45 +129,45 @@ function FizzBuzz() {
       scoreListRef.current.appendChild(li);
     });
   };
-  
+
 
   return (
     <>
       {/* Intro and high score list */}
-      <div class="container p-2 mt-4">
-        <div class="row">
-          <div class="col-8">
-            <h2 class="text-light d-flex justify-content-center">
+      <div className="container p-2 mt-4">
+        <div className="row">
+          <div className="col-8">
+            <h2 className="text-light d-flex justify-content-center">
               Hello and welcome to my version of fizzbuzz!
             </h2>
           </div>
-          <div class="col-4">
-            <div id="highscore" class="col-6 text-light">
-              <h2 class="text-light">High scores:</h2>
-              <ol id="highscoreList" class="text-light" ref={scoreListRef}></ol>
+          <div className="col-4">
+            <div id="highscore" className="col-6 text-light">
+              <h2 className="text-light">High scores:</h2>
+              <ol id="highscoreList" className="text-light" ref={scoreListRef}></ol>
             </div>
           </div>
         </div>
       </div>
 
       {/* Start and answer BTNS */}
-      <div class="container">
-        <div class="row mt-3">
-          <div id="start-btn" class="col-6 d-flex justify-content-center">
-            <button ref={startBtnRef} id="startBtn" type="button" class="btn btn-light" onClick={handleStartClick}>
+      <div className="container">
+        <div className="row mt-3">
+          <div id="start-btn" className="col-6 d-flex justify-content-center">
+            <button ref={startBtnRef} id="startBtn" type="button" className="btn btn-light" onClick={handleStartClick}>
               Start Game
             </button>
           </div>
-          <div id="timer" class="col-4 d-flex justify-content-center fw-bold fs-4 text-light"></div>
-          <div id="score" class="col-2 d-flex justify-content-center fw-bold fs-4 text-light"></div>
+          <div id="timer" className="col-4 d-flex justify-content-center fw-bold fs-4 text-light"></div>
+          <div id="score" className="col-2 d-flex justify-content-center fw-bold fs-4 text-light"></div>
         </div>
       </div>
 
       {/* User input */}
-      <div class="container">
-        <div class="row mt-3">
-          <div class="col-6">
-            <div class="d-grid gap-2 col-6 mx-auto">
+      <div className="container">
+        <div className="row mt-3">
+          <div className="col-6">
+            <div className="d-grid gap-2 col-6 mx-auto">
               <button ref={fizzRef} id="fizzBtn" className="btn btn-light" type="button" onClick={handleFizzClick}>
                 Fizz
               </button>
@@ -183,28 +182,29 @@ function FizzBuzz() {
               </button>
             </div>
           </div>
-          <div class="col-6 d-flex justify-content-center">
-            <div id="numberInput" class="fw-bold fs-4 text-light" ref={numberInputRef}></div>
+          <div className="col-6 d-flex justify-content-center">
+            <div id="numberInput" className="fw-bold fs-4 text-light">{randomNumber}</div>
+            {/* <div id="numberInput" className="fw-bold fs-4 text-light" ref={numberInputRef}>{randomNumber}</div> */}
           </div>
         </div>
       </div>
 
       {/* Game rules */}
-      <div class="container">
-        <div class="row mt-3">
-          <div id="rules" class="col-6 d-flex justify-content-center">
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Game
+      <div className="container">
+        <div className="row mt-3">
+          <div id="rules" className="col-6 d-flex justify-content-center">
+            <button type="button" className="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Game
               rules</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header bg-dark">
-                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">FizzBuzz rules.</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header bg-dark">
+                    <h1 className="modal-title fs-5 text-light" id="exampleModalLabel">FizzBuzz rules.</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body bg-dark">
-                    <p class="text-light">
+                  <div className="modal-body bg-dark">
+                    <p className="text-light">
                       The rules are very simple to the game, you have 60 seconds to determine what a number
                       will return. to
                       determine the
@@ -214,15 +214,15 @@ function FizzBuzz() {
                       divisible by 3 returns fizz! Each one you get right you get one point. Good luck!
                     </p>
                   </div>
-                  <div class="modal-footer bg-dark">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <div className="modal-footer bg-dark">
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div id="newGame" class="col-6 d-flex justify-content-center">
-            <button id="newGameBtn" type="button" class="btn btn-light">New Game</button>
+          <div id="newGame" className="col-6 d-flex justify-content-center">
+            <button id="newGameBtn" type="button" className="btn btn-light">New Game</button>
           </div>
         </div>
       </div>

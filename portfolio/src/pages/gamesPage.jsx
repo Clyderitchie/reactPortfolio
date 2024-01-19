@@ -7,10 +7,10 @@ function Games() {
     return (
         <GameList
             links={[
-                <Link key={1} class="list-item text-decoration-none fs-3 text-light" to='/fizzBuzz'>
+                <Link key={1} className="list-item text-decoration-none fs-3 text-light" to='/fizzBuzz'>
                     FizzBuzz
                 </Link>,
-                <Link key={1} class="list-item text-decoration-none fs-3 text-light" to='/ticTacToe'>
+                <Link key={1} className="list-item text-decoration-none fs-3 text-light" to='/ticTacToe'>
                     TicTacToe
                 </Link>,
             ]}

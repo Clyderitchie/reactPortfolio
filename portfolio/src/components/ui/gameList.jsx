@@ -13,8 +13,8 @@ function GameList({ links }) {
                             Let's play then!
                         </h3>
                     </div>
-                    <div class=" mt-4 ">
-                        <ul class="bg-dark d-flex flex-column p-3">
+                    <div className=" mt-4 ">
+                        <ul className="bg-dark d-flex flex-column p-3">
                             {links.map((link) => link)}
                         </ul>
                     </div>
