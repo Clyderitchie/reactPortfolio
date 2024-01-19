@@ -34,7 +34,7 @@ function FizzBuzz() {
 
   useEffect(() => {
     answerBtns();
-    renderScores();
+    // renderScores();
     startBtnRef.current.addEventListener('click', startTimer);
   }, []);
 
@@ -112,23 +112,24 @@ function FizzBuzz() {
   };
 
   const saveScore = () => {
-    const newScore = { in: "CR", score };
-    scores.push(newScore);
-    scores.sort((a, b) => b.score - a.score);
-    setScores(scores.slice(0, 5));
+    const newScore = { id: "CR", score };
+    const updatedScores = [...scores, newScore];
+    const sortedScores = updatedScores.sort((a, b) => b.score - a.score);
+    const topScores = sortedScores.slice(0, 5);
+    setScores(topScores);
+    localStorage.setItem('scores', JSON.stringify(topScores));
     renderScores();
-    localStorage.setItem('scores', JSON.stringify(scores));
   };
 
   const renderScores = () => {
-    scoreListRef.current.innerHTML = '';
-    scores.slice(0, 5).forEach((score, index) => {
+    const scoreList = scoreListRef.current;
+    scoreList.innerHTML = '';
+    scores.forEach((score, index) => {
       const li = document.createElement('li');
       li.textContent = score.score;
-      scoreListRef.current.appendChild(li);
+      scoreList.appendChild(li);
     });
   };
-
 
   return (
     <>
@@ -143,7 +144,11 @@ function FizzBuzz() {
           <div className="col-4">
             <div id="highscore" className="col-6 text-light">
               <h2 className="text-light">High scores:</h2>
-              <ol id="highscoreList" className="text-light" ref={scoreListRef}></ol>
+              <ol id="highscoreList" className="text-light" ref={scoreListRef}>
+                {scores.slice(0, 5).map((score, index) => (
+                  <li key={index}>{score.score}</li>
+                ))}
+              </ol>
             </div>
           </div>
         </div>
