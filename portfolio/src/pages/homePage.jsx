@@ -1,30 +1,19 @@
+import { Link } from 'react-router-dom';
+import HomeContent from '../components/ui/homeContent';
+
 function Home() {
     return (
-        <div className="container text-light">
-            <div className="row">
-                <div id="intro" className="col-6">
-                    <h1 id="helloHome" className="fw-bolder">Hello Welcome to my portfolio</h1>
-                    <p className="fw-bold fs-5 mt-2 ">
-                        Hello, my name is Clyde and I am junior full stack developer who also has experience in programming
-                        languages such as Java and Python. On this site there is many things to do and explore, from playing
-                        games to checking out my
-                        latest projects that I have done. Please if you like what you see feel free to contact me if you have
-                        any questions! Thank you for visiting and enjoy!
-                    </p>
-                </div>
-                <div id="explore" className="col-6">
-                    <h2>
-                        What would you like to do?
-                    </h2>
-                    <ul className="text-decoration-none">
-                        <a href="/fizzBuzz"><li>Play a game.</li></a>
-                        <li>Explore projects.</li>
-                        <li>Review my resume.</li>
-                        <li>Get in contact with me.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+   
+        <HomeContent
+            links={[
+                <Link key={1} className="list-item text-decoration-none fs-3 text-light" to='/games'>Play a Game.</Link>,
+                <Link key={2} className="list-item text-decoration-none fs-3 text-light" to='/projects'>Explore some projects.</Link>,
+                <Link key={3} className="list-item text-decoration-none fs-3 text-light" to='/resumes'>View my resume.</Link>,
+                <Link key={4} className="list-item text-decoration-none fs-3 text-light" to='/contacts'>Get in touch with me. </Link>,
+            ]}
+
+        />
+        
     )
 };
 
