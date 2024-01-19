@@ -5,9 +5,7 @@ function FizzBuzz() {
   const [scores, setScores] = useState(JSON.parse(localStorage.getItem('scores')) || []);
   const [timer, setTimer] = useState(60);
   const [randomNumber, setRandomNumber] = useState(null);
-  // const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * 1000));
   const [selectedBtn, setSelectedBtn] = useState('');
-  // const numberInputRef = useRef(null);
   const scoreListRef = useRef(null);
   const fizzRef = useRef(null);
   const buzzRef = useRef(null);
@@ -37,8 +35,6 @@ function FizzBuzz() {
   useEffect(() => {
     answerBtns();
     renderScores();
-    // const newRandomNumber = Math.floor(Math.random() * 1000);
-    // setRandomNumber(newRandomNumber);
     startBtnRef.current.addEventListener('click', startTimer);
   }, []);
 
@@ -162,7 +158,7 @@ function FizzBuzz() {
             </button>
           </div>
           <div id="timer" className="col-4 d-flex justify-content-center fw-bold fs-4 text-light"></div>
-          <div id="score" className="col-2 d-flex justify-content-center fw-bold fs-4 text-light"></div>
+          <div id="score" className="col-2 d-flex justify-content-center fw-bold fs-4 text-light">{score}</div>
         </div>
       </div>
 
