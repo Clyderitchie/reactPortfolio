@@ -6,7 +6,7 @@ function Nav({ links }) {
                     <nav className="navbar navbar-expand-lg bg-dark">
                         <div className="container-fluid">
                             <h1 className="bolder">
-                                <a className="text-decoration-none text-light" href="#">
+                                <a className="text-decoration-none text-light" href="/">
                                     Clyde Ritchie
                                 </a>
                             </h1>
