@@ -17,11 +17,6 @@ function Nav({ links }) {
                                 </button>
                                 <ul className="dropdown-menu bg-dark">
                                     {links.map((link) => link)};
-                                    {/* <li><a className="dropdown-item text-light" href="#">Games</a></li>
-                                <li><a className="dropdown-item text-light" href="#">Projects</a></li>
-                                <li><a className="dropdown-item text-light" href="#">Contact</a></li>
-                                <li><a className="dropdown-item text-light" href="#">Resume</a></li>
-                                <li><a className="dropdown-item text-light" href="#">Admin</a></li> */}
                                 </ul>
                             </div>
                         </div>
