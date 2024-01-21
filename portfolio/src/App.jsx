@@ -7,12 +7,10 @@ function App() {
   return (
     <>
       <Nav />
-      <body className="bg-dark">
         <main>
           <Outlet />
         </main>
         <Footer />
-      </body>
     </>
   )
 }

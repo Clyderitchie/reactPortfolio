@@ -10,7 +10,7 @@ import Home from './pages/homePage';
 import ErrorPage from './pages/errorPage';
 import Game from './pages/gamesPage';
 import FizzBuzz from './pages/fizzBuzz';
-import Projects from './pages/projectsPage';
+import Projects from './pages/projects/projectsPage';
 
 const router = createBrowserRouter([
   {
