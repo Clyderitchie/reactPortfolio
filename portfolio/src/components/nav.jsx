@@ -9,8 +9,8 @@ function Nav() {
                 <Link key={1} className="dropdown-item text-light" to='/'>
                     Home
                 </Link>,
-                <Link key={2} className="dropdown-item text-light" to='/games'>
-                    Games
+                <Link key={2} className="dropdown-item text-light" to='/applications'>
+                    Applications
                 </Link>,
                 <Link key={3} className="dropdown-item text-light" to='/projects'>
                     Projects

@@ -8,10 +8,10 @@ import './index.css'
 import App from './App';
 import Home from './pages/homePage';
 import ErrorPage from './pages/errorPage';
-import Game from './pages/games/gamesPage';
-import FizzBuzz from './pages/games/fizzBuzz';
+import Apps from './pages/applications/appPage';
+import FizzBuzz from './pages/applications/fizzBuzz';
 import Projects from './pages/projects/projectsPage';
-import Calculator from './pages/games/calculator';
+import Calculator from './pages/applications/calculator';
 import Contacts from './pages/contact/contactPage';
 
 const router = createBrowserRouter([
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/games',
-        element: <Game />
+        path: '/applications',
+        element: <Apps />
       },
       {
         path: '/fizzBuzz',

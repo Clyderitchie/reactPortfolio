@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import GameList from '../../components/ui/gameList';
+import AppList from '../../components/ui/appList';
 
 
 
-function Games() {
+function Apps() {
     return (
-        <GameList
+        <AppList
             links={[
                 <Link key={1} className="list-item text-decoration-none fs-3 text-light" to='/fizzBuzz'>
                     FizzBuzz
@@ -18,4 +18,4 @@ function Games() {
     )
 };
 
-export default Games;
+export default Apps;
