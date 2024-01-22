@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import GameList from '../components/ui/gameList';
+import GameList from '../../components/ui/gameList';
 
 
 
@@ -10,9 +10,9 @@ function Games() {
                 <Link key={1} className="list-item text-decoration-none fs-3 text-light" to='/fizzBuzz'>
                     FizzBuzz
                 </Link>,
-                <Link key={1} className="list-item text-decoration-none fs-3 text-light" to='/ticTacToe'>
-                    TicTacToe
-                </Link>,
+                <Link key={2} className="list-item text-decoration-none fs-3 text-light" to='/calculator'>
+                    Calculator
+                </Link>
             ]}
         />
     )

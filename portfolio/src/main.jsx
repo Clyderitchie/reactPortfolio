@@ -8,9 +8,10 @@ import './index.css'
 import App from './App';
 import Home from './pages/homePage';
 import ErrorPage from './pages/errorPage';
-import Game from './pages/gamesPage';
-import FizzBuzz from './pages/fizzBuzz';
+import Game from './pages/games/gamesPage';
+import FizzBuzz from './pages/games/fizzBuzz';
 import Projects from './pages/projects/projectsPage';
+import Calculator from './pages/games/calculator';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: '/projects',
         element: <Projects />
       },
+      {
+        path: '/calculator',
+        element: <Calculator />
+      }
     ]
   }
 ])
