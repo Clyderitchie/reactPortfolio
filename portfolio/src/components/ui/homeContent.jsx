@@ -1,7 +1,7 @@
 function Home({ links }) {
     return (
         <>
-            <div className="container text-light mt-5">
+            <div className="container text-light mt-5 mb-5">
                 <div className="row">
                     <div id="intro" className="col-12">
                         <h1 id="helloHome" className="fw-bolder">Hello Welcome to my portfolio</h1>
@@ -15,22 +15,24 @@ function Home({ links }) {
                     </div>
                 </div>
             </div>
-            <div className="container text-light mt-5">
-                <div className="row mt-2">
-                    <div id="explore" className="col-6">
-                        <h2>
+            <div className="container text-light mt-5 d-flex justify-content-around">
+                <div className="row">
+                    <div id="explore" className="col-12 mt-5">
+                        <h2 className="d-flex flex-column align-items-center">
                             What would you like to do?
                         </h2>
-                        <ul className="d-flex flex-column">
+                        <ul className="d-flex flex-column align-items-center p-3">
                             {links.map((link) => link)}
                         </ul>
                     </div>
-                    <div className="col-6">
+
+                </div>
+                <div className="row">
+                    <div className="col-6 p-3">
                         <img src="https://placehold.co/600x400" alt="This will be a picture of Clyde" />
                     </div>
                 </div>
             </div>
-
         </>
     )
 };

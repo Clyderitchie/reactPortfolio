@@ -13,6 +13,7 @@ import FizzBuzz from './pages/applications/fizzBuzz';
 import Projects from './pages/projects/projectsPage';
 import Calculator from './pages/applications/calculator';
 import Contacts from './pages/contact/contactPage';
+import Password from './pages/applications/passwordGenerator';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/contacts',
         element: <Contacts />
+      },
+      {
+        path: '/password',
+        element: <Password />
       }
     ]
   }

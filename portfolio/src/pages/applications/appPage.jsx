@@ -12,6 +12,9 @@ function Apps() {
                 </Link>,
                 <Link key={2} className="list-item text-decoration-none fs-3 text-light" to='/calculator'>
                     Calculator
+                </Link>,
+                <Link key={3} className="list-item text-decoration-none fs-3 text-light" to='/password'>
+                    Password Generator
                 </Link>
             ]}
         />
