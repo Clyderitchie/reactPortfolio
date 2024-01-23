@@ -1,4 +1,6 @@
 import Haze from './haze';
+import HazeImage from './img/haze.jpeg'
+import './project.css'
 
 function Projects() {
     return (
@@ -7,7 +9,7 @@ function Projects() {
                 <div className="row d-flex justify-content-between flex-wrap">
                     <div className="col-6">
                         <div className="card mb-3 bg-dark">
-                            <img src="https://placehold.co/600x400" className="card-img-top" alt="Screenshot of Haze" />
+                            <img src={HazeImage} className="card-img-top" alt="Screenshot of Haze" />
                             <div className="card-body">
                                 <a className="text-decoration-none" href="https://haze-community-a1679c79f3fa.herokuapp.com/" target="_blank">
                                 <h5 className="text-light text-center">Haze</h5>
