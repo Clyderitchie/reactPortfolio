@@ -1,0 +1,17 @@
+/* Calculator Container */
+#calc-container {
+    outline: 3px solid red;
+}
+
+/* Calculator keys */
+.oppKeys {
+    width: 5.8%;
+}
+
+.numericKeys {
+    width: 11.8%;
+}
+
+.equalKey {
+    width: 23%;
+}
