@@ -1,4 +1,6 @@
-function Home({ links }) {
+import ClydeImage from './img/Clyde.jpeg'
+
+function Home({ links }) { 
     return (
         <>
             <div className="container text-light mt-5 mb-5">
@@ -29,7 +31,7 @@ function Home({ links }) {
                 </div>
                 <div className="row">
                     <div className="col-6 p-3">
-                        <img src="https://placehold.co/600x400" alt="This will be a picture of Clyde" />
+                        <img src={ClydeImage} alt="This will be a picture of Clyde" />
                     </div>
                 </div>
             </div>

@@ -1,3 +1,6 @@
+import FizzBuzzImage from './img/fizzBuzz.png';
+import PasswordGenerator from './img/passwordGenerator.png'
+
 function AppList({ links }) {
     return (
         <>

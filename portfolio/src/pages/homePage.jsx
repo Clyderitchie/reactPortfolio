@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import HomeContent from '../components/ui/homeContent';
+import HomeContent from '../components/ui/homepage/homeContent';
+
 
 function Home() {
     return (

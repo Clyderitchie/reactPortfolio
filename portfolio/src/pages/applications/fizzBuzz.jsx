@@ -151,7 +151,7 @@ function FizzBuzz() {
               Hello and welcome to my version of fizzbuzz!
             </h2>
           </div>
-          <div className="col-4">
+          {/* <div className="col-4">
             <div id="highscore" className="col-6 text-light">
               <h2 className="text-light">High scores:</h2>
               <ol id="highscoreList" className="text-light" ref={scoreListRef}>
@@ -160,7 +160,7 @@ function FizzBuzz() {
                 ))}
               </ol>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -173,7 +173,7 @@ function FizzBuzz() {
             </button>
           </div>
           <div id="timer" className="col-4 d-flex justify-content-center fw-bold fs-4 text-light"></div>
-          <div id="score" className="col-2 d-flex justify-content-center fw-bold fs-4 text-light">{score}</div>
+          <div id="score" className="col-2 d-flex justify-content-center fw-bold fs-4 text-light">Score: {score}</div>
         </div>
       </div>
 

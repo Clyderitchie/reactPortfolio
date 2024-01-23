@@ -1,5 +1,6 @@
 import Haze from './haze';
 import HazeImage from './img/haze.jpeg'
+import DexperienceImage from './img/dexperience.png'
 import './project.css'
 
 function Projects() {
@@ -9,26 +10,28 @@ function Projects() {
                 <div className="row d-flex justify-content-between flex-wrap">
                     <div className="col-6">
                         <div className="card mb-3 bg-dark">
-                            <img src={HazeImage} className="card-img-top" alt="Screenshot of Haze" />
+                            <img src={HazeImage} className="card-img-top" alt="Screenshot of Haze homepage" />
                             <div className="card-body">
                                 <a className="text-decoration-none" href="https://haze-community-a1679c79f3fa.herokuapp.com/" target="_blank">
-                                <h5 className="text-light text-center">Haze</h5>
-                                <p className="text-light text-center">A clone of the popular gaming site Steam.</p>
-                                <p className="text-light text-center">A Full Stack application that was built using <br />the CRUD method, with MySql, express, and express handlebars.</p>
+                                    <h5 className="text-light text-center">Haze</h5>
+                                    <p className="text-light text-center">A clone of the popular gaming site Steam.</p>
+                                    <p className="text-light text-center">A Full Stack application that was built using <br />the CRUD method, with MySql, express, and express handlebars.</p>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div className="col-6">
                         <div className="card mb-3 bg-dark">
-                            <img src="https://placehold.co/600x400" className="card-img-top" alt="Screenshot of Haze" />
+                            <img src={DexperienceImage} className="card-img-top" alt="Screenshot of Dexperience homepage" />
                             <div className="card-body">
-                                <h5 className="text-light text-center">Dexperience</h5>
-                                <p className="text-light text-center">Welcome to new version of the Pokedex.</p>
+                                <a className="text-decoration-none" href="https://clyderitchie.github.io/dexperience/" target="_blank">
+                                    <h5 className="text-light text-center">Dexperience</h5>
+                                    <p className="text-light text-center">Welcome to new version of the Pokedex.</p>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </>

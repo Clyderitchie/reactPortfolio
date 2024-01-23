@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import AppList from '../../components/ui/appList';
+import AppList from '../../components/ui/appPage/appList';
 
 
 
