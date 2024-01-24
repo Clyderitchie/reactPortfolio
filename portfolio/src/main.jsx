@@ -14,6 +14,7 @@ import Projects from './pages/projects/projectsPage';
 import Calculator from './pages/applications/calculator';
 import Contacts from './pages/contact/contactPage';
 import Password from './pages/applications/passwordGenerator';
+import Resume from './pages/resume/resumePage';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: '/password',
         element: <Password />
+      },
+      {
+        path: '/resumes',
+        element: <Resume />
       }
     ]
   }
