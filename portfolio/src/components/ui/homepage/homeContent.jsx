@@ -1,6 +1,6 @@
 import ClydeImage from './img/Clyde.jpeg'
 
-function Home({ links }) { 
+function Home({ links }) {
     return (
         <>
             <div className="container text-light mt-5 mb-5">
@@ -19,16 +19,26 @@ function Home({ links }) {
             </div>
             <div className="container text-light mt-5 d-flex justify-content-around">
                 <div className="row">
-                    <div id="explore" className="col-12 mt-5">
-                        <h2 className="d-flex flex-column align-items-center">
-                            What would you like to do?
-                        </h2>
-                        <ul className="d-flex flex-column align-items-center p-3">
-                            {links.map((link) => link)}
-                        </ul>
+                    <div id="carouselExampleCaptions" className="carousel slide">
+                        <div className="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div className="carousel-inner text-light">
+                            {links.map((link) => link)};
+                        </div>
+                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
+                        </button>
+                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
+                        </button>
                     </div>
-
                 </div>
+
                 <div className="row">
                     <div className="col-6 p-3">
                         <img src={ClydeImage} alt="This will be a picture of Clyde" />

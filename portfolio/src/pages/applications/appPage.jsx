@@ -26,7 +26,7 @@ function Apps() {
                             <img src={PasswordGeneratorImage} className="card-img-top" alt="Screenshot of password generator page" />
                             <div className="card-body">
                                     <h5 className="text-light text-center">Calculator</h5>
-                                    <p className="text-light text-center">Need a help with some numbers? Well don't worry anymore!</p>
+                                    <p className="text-light text-center">Need help with some numbers? Well don't worry anymore!</p>
                             </div>
                         </div>
                     </div>

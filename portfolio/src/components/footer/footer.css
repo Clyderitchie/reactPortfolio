@@ -1,8 +1,7 @@
 footer {
-    outline: 3px solid red; 
-    position: absolute;
+    position: fixed;
     margin-top: auto;
     bottom: 0;
     width: 100%;
-    padding: 50px;
+    padding: 25px;
 }

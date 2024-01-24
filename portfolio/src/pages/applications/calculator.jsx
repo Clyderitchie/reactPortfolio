@@ -77,19 +77,19 @@ function Calculator() {
                 return;
             }
 
-            if (target.classList.contains('operator')) {
+            if (target.classlist.contains('operator')) {
                 handleOperator(target.value);
                 updateDisplay();
                 return;
             }
 
-            if (target.classList.contains('decimal')) {
+            if (target.classlist.contains('decimal')) {
                 inputDecimal(target.value);
                 updateDisplay();
                 return;
             }
 
-            if (target.classList.contains('all-clear')) {
+            if (target.classlist.contains('all-clear')) {
                 resetCalculator();
                 updateDisplay();
                 return;
