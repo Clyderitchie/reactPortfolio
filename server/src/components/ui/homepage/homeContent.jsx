@@ -1,5 +1,7 @@
 import ClydeImage from './img/Clyde.jpeg'
 
+import './homepage.css'
+
 function Home({ links }) {
     return (
         <>
@@ -19,7 +21,7 @@ function Home({ links }) {
             </div>
             <div className="container text-light mt-5 d-flex justify-content-around">
                 <div className="row">
-                    <div id="carouselExampleCaptions" className="carousel slide">
+                    <div id="carouselExampleCaptions" className="carousel slide appScroll">
                         <div className="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
