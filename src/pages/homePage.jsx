@@ -3,7 +3,7 @@ import HomeContent from '../components/ui/homepage/homeContent';
 
 import FizzBuzz from '../components/ui/appPage/img/fizzBuzz.png';
 import Projects from '../components/ui/homepage/img/projectPage.png';
-import Resume from '../components/ui/homepage/img/resumePlaceHolder.png';
+import Resume from '../components/ui/homepage/img/resumePlaceholder.png';
 import Contact from '../components/ui/homepage/img/contactPage.png';
 
 import'../components/ui/homepage/homepage.css';
